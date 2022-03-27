@@ -2,7 +2,15 @@ import React from "react";
 
 import { FaGithub, FaGlobe } from "react-icons/fa";
 
-const Card = ({ image, title, description, alt, children }) => {
+const Card = ({
+	image,
+	title,
+	description,
+	alt,
+	children,
+	website,
+	github,
+}) => {
 	return (
 		<div className="flex justify-center">
 			<div className="shadow-xl max-w-sm rounded-xl overflow-hidden dark:bg-navy-600 duration-300">
@@ -17,13 +25,17 @@ const Card = ({ image, title, description, alt, children }) => {
 					<p className="text-sm md:text-base font-light mb-6">{description}</p>
 					<div className="flex justify-between text-xl md:text-2xl text-gray-700 dark:text-gray-300">
 						<a
-							href="#!"
+							href={website}
+							target="_blank"
+							rel="noreferrer noopener"
 							className="hover:text-blue-700 dark:hover:text-violet-400 duration-300"
 						>
 							<FaGlobe />
 						</a>
 						<a
-							href="#!"
+							href={github}
+							target="_blank"
+							rel="noreferrer noopener"
 							className="hover:text-blue-700 dark:hover:text-violet-400 duration-300"
 						>
 							<FaGithub />

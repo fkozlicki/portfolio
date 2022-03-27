@@ -10,7 +10,7 @@ import { SiExpress, SiNextdotjs, SiMaterialui } from "react-icons/si";
 const arr = [
 	{
 		title: "CRUD application",
-		desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quisquam numquam aspernatur itaque facilis in ipsam vero fugiat deleniti officia?",
+		desc: "Fullstack CRUD application - you can create, read, update and delete recipes. It is full-stack MERN application but I was mostly focused on frontend part, so it has all needed functionalities and sends request to backend. I also wanted it look good so it is styled with css modules and it is reponsive.",
 		image: image1,
 		alt: "image1",
 		technologies: (
@@ -21,10 +21,12 @@ const arr = [
 				<FaNodeJs />
 			</>
 		),
+		github: "https://github.com/fkozlicki/recipes-app",
+		website: "https://recipe-crud-app.netlify.app/",
 	},
 	{
 		title: "Store project",
-		desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quisquam numquam aspernatur itaque facilis in ipsam vero fugiat deleniti officia?",
+		desc: "Fully functional eCommerce application connected with commerce.js ans Stripe, built with React and Material Design You can add and remove items from cart, fill form with shipping data and make an order using fake card number. It is a demo app so dont worry, it will not handle a real order.",
 		image: image2,
 		alt: "image2",
 		technologies: (
@@ -33,10 +35,12 @@ const arr = [
 				<SiMaterialui />
 			</>
 		),
+		github: "https://github.com/fkozlicki/ecommerce-proj",
+		website: "https://click-it-app.netlify.app/",
 	},
 	{
 		title: "Blog project",
-		desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quisquam numquam aspernatur itaque facilis in ipsam vero fugiat deleniti officia?",
+		desc: "My own personal blog application. Built using React, Next.js, MDB, Sass, GraphQL and connected to headless API - GraphCMS. It contains featured and recent posts, categories, full markdown articles, author information, comments. You can also leave a comment and contact using form.",
 		image: image3,
 		alt: "image3",
 		technologies: (
@@ -47,6 +51,8 @@ const arr = [
 				<FaSass />
 			</>
 		),
+		github: "https://github.com/fkozlicki/blog-app",
+		website: "http://blog-app-fkozlicki.vercel.app/",
 	},
 ];
 
@@ -70,6 +76,8 @@ const Portfolio = () => {
 							title={el.title}
 							description={el.desc}
 							alt={el.alt}
+							github={el.github}
+							website={el.website}
 						>
 							{el.technologies}
 						</Card>

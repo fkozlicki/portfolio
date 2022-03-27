@@ -1,7 +1,7 @@
 import React from "react";
 
 import heroImg from "../images/hero-img.svg";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
 					<a href="#!" data-mdb-ripple="true">
 						<img src={heroImg} alt="img" className="w-full h-auto" />
 					</a>
-					<div className="self-center items-end flex flex-col gap-12 text-xl md:text-2xl lg:translate-x-20">
+					<div className="self-center items-end flex flex-col gap-6 text-xl md:text-2xl lg:translate-x-20 text-gray-800">
 						<a
 							href="#!"
 							className="hover:text-orange-600 dark:hover:text-orange-600 dark:text-white duration-300"
@@ -27,6 +27,12 @@ const Hero = () => {
 							className="hover:text-orange-600 dark:hover:text-orange-600 dark:text-white duration-300"
 						>
 							<FaLinkedin />
+						</a>
+						<a
+							href="#!"
+							className="hover:text-orange-600 dark:hover:text-orange-600 dark:text-white duration-300"
+						>
+							<FaTwitter />
 						</a>
 					</div>
 					<div className="dark:text-white col-[1/3] md:col-[1/2] md:row-[1] duration-300">
