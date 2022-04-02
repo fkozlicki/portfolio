@@ -13,10 +13,10 @@ const About = () => {
 			</div>
 			<div className="md:max-w-screen-md xl:max-w-screen-lg mx-3 sm:mx-6 md:m-auto">
 				<div className="max-w-md md:max-w-none m-auto grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-8 text-center xl:text-start items-center">
-					<div className="p-4 bg-navy-400 dark:bg-navy-600 rounded-xl duration-300">
+					<div className="p-4 bg-aliceblue dark:bg-navy-600 rounded-xl duration-300">
 						<img className="w-full h-auto rounded-xl" src={image} alt="about" />
 					</div>
-					<p className="text-sm sm:text-base md:text-lg text-center font-normal md:text-left ">
+					<p className="text-[15px] md:text-base md:text-lg text-center md:text-left dark:font-light">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
 						perferendis numquam modi libero labore porro explicabo? Minima quos
 						voluptate expedita corporis reiciendis, cupiditate a iusto pariatur,
