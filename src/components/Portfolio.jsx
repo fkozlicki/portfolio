@@ -68,7 +68,7 @@ const Portfolio = () => {
 				</h1>
 			</div>
 			<div className="md:max-w-screen-md xl:max-w-screen-lg m-3 sm:mx-6 md:m-auto">
-				<div className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-7">
+				<div className="grid justify-center md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-7">
 					{arr.map((el, idx) => (
 						<Card
 							key={idx}

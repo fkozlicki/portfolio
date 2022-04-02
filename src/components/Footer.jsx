@@ -8,16 +8,16 @@ const Footer = () => {
 			<div className="flex flex-col items-center justify-center gap-6 md:max-w-screen-md xl:max-w-screen-lg md:m-auto">
 				<a
 					href="#hero"
-					className="font-md hover:text-navy-400 dark:hover:text-gunmetal duration-300"
+					className="font-medium text-lg text-gray-600 hover:text-gray-900  dark:text-gray-400 dark:hover:text-white duration-300"
 				>
 					Filip
 				</a>
-				<div className="flex gap-6 text-xl md:text-2xl text-gray-800">
+				<div className="flex gap-6 text-lg md:text-xl text-gray-800 dark:text-white">
 					<a
 						href="https://github.com/fkozlicki"
 						target="_blank"
 						rel="noreferrer noopener"
-						className="hover:text-navy-400 dark:hover:text-gunmetal duration-300"
+						className="text-gray-600 hover:text-gray-900  dark:text-gray-400 dark:hover:text-white duration-300"
 					>
 						<FaGithub />
 					</a>
@@ -25,7 +25,7 @@ const Footer = () => {
 						href="www.linkedin.com"
 						target="_blank"
 						rel="noreferrer noopener"
-						className="hover:text-navy-400 dark:hover:text-gunmetal duration-300"
+						className="text-gray-600 hover:text-gray-900  dark:text-gray-400 dark:hover:text-white duration-300"
 					>
 						<FaLinkedin />
 					</a>
@@ -33,7 +33,7 @@ const Footer = () => {
 						href="https://twitter.com/FKozlicki"
 						target="_blank"
 						rel="noreferrer noopener"
-						className="hover:text-navy-400 dark:hover:text-gunmetal duration-300"
+						className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white duration-300"
 					>
 						<FaTwitter />
 					</a>

@@ -27,7 +27,7 @@ const Navbar = () => {
 		<nav className="fixed top-[90%] left-[50%] translate-x-[-50%] flex bg-navy-400/[80%] dark:bg-fogra/[90%] md:bg-transparent md:dark:bg-transparent navbar md:absolute md:top-0 md:w-full md:max-w-screen-md xl:max-w-screen-lg md:py-6 md:px-4 md:border-b border-gray-300 dark:border-gray-600 rounded-full overflow-hidden md:rounded-none backdrop-blur-sm z-50 dark:text-white duration-300">
 			<a
 				href="/"
-				className="hover:text-blue-700 dark:hover:text-violet-400 hidden md:block duration-300"
+				className="hidden md:block text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
 			>
 				Filip
 			</a>
@@ -35,7 +35,7 @@ const Navbar = () => {
 				<li>
 					<a
 						href="#about"
-						className="hover:text-blue-700 dark:hover:text-violet-400 duration-300"
+						className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
 					>
 						O mnie
 					</a>
@@ -43,7 +43,7 @@ const Navbar = () => {
 				<li>
 					<a
 						href="#portfolio"
-						className="hover:text-blue-700 dark:hover:text-violet-400 duration-300"
+						className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
 					>
 						Portfolio
 					</a>
@@ -51,7 +51,7 @@ const Navbar = () => {
 				<li>
 					<a
 						href="#contact"
-						className="hover:text-blue-700 dark:hover:text-violet-400 duration-300"
+						className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
 					>
 						Kontakt
 					</a>
@@ -109,9 +109,9 @@ const Navbar = () => {
 				}}
 			>
 				{darkTheme ? (
-					<BiSun className="hover:text-blue-600 dark:hover:text-violet-400 duration-300" />
+					<BiSun className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300" />
 				) : (
-					<BiMoon className="hover:text-blue-600 dark:hover:text-violet-400 duration-300" />
+					<BiMoon className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300" />
 				)}
 			</button>
 		</nav>

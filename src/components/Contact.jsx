@@ -67,7 +67,7 @@ const Contact = () => {
 			</div>
 			<div className="m-auto max-w-md sm:max-w-lg lg:max-w-2xl">
 				<form onSubmit={sendEmail} ref={formEl} className="mx-3 sm:mx-6">
-					<div className="flex flex-wrap gap-5 p-4 mb-4 bg-navy-400 dark:bg-navy-600 text-sm md:text-base rounded-lg duration-300">
+					<div className="flex flex-wrap gap-5 p-4 mb-4 bg-aliceblue dark:bg-navy-600 text-sm md:text-base rounded-lg duration-300">
 						<div className="flex flex-col p-3 bg-white bg-aliceblue2 dark:bg-navy-500 flex-[100%] lg:flex-1 rounded duration-300">
 							<label className="text-gray-400 mb-1" htmlFor="name">
 								Imię
