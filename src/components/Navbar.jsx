@@ -1,27 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiSun, BiMoon } from "react-icons/bi";
 import { FaUserAlt, FaEnvelope } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { BsBriefcaseFill } from "react-icons/bs";
 
-document.addEventListener("scroll", () => {
-	if (
-		window.scrollY >=
-		document.body.offsetHeight -
-			document.documentElement.clientHeight -
-			document.querySelector(".footer").offsetHeight +
-			210
-	) {
-		document.querySelector(".navbar").classList.remove("top-[90%]");
-		document.querySelector(".navbar").classList.add("top-[65%]");
-	} else {
-		document.querySelector(".navbar").classList.add("top-[90%]");
-		document.querySelector(".navbar").classList.remove("top-[65%]");
-	}
-});
-
 const Navbar = () => {
+	const [height, setHeight] = useState(window.scrollY);
 	const [darkTheme, setDarkTheme] = useState(false);
+
+	useEffect(() => {
+		function handleScroll() {
+			setHeight(window.scrollY);
+			if (
+				height >=
+				document.body.offsetHeight -
+					document.documentElement.clientHeight -
+					document.querySelector(".footer").offsetHeight / 2.5
+			) {
+				document.querySelector(".navbar").classList.add("top-[70%]");
+			} else {
+				document.querySelector(".navbar").classList.remove("top-[70%]");
+			}
+		}
+		window.addEventListener("scroll", handleScroll);
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, [height]);
+
+	useEffect(() => {
+		localStorage.theme === "dark" ? setDarkTheme(true) : setDarkTheme(false);
+	}, []);
+
+	useEffect(() => {
+		darkTheme
+			? document.documentElement.classList.add("dark")
+			: document.documentElement.classList.remove("dark");
+	}, [darkTheme]);
 
 	return (
 		<nav className="fixed top-[90%] left-[50%] translate-x-[-50%] flex bg-navy-400/[80%] dark:bg-fogra/[90%] md:bg-transparent md:dark:bg-transparent navbar md:absolute md:top-0 md:w-full md:max-w-screen-md xl:max-w-screen-lg md:py-6 md:px-4 md:border-b border-gray-300 dark:border-gray-600 rounded-full overflow-hidden md:rounded-none backdrop-blur-sm z-50 dark:text-white duration-300">
@@ -105,7 +119,9 @@ const Navbar = () => {
 				type="button"
 				onClick={() => {
 					setDarkTheme(!darkTheme);
-					document.documentElement.classList.toggle("dark");
+					darkTheme
+						? (localStorage.theme = "light")
+						: (localStorage.theme = "dark");
 				}}
 			>
 				{darkTheme ? (
