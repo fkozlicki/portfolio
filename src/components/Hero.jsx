@@ -11,7 +11,10 @@ const Hero = () => {
 			id="hero"
 		>
 			<div className="mx-3 sm:mx-6 md:m-auto md:max-w-screen-md xl:max-w-screen-lg">
-				<div className="grid grid-cols-[3fr_0.25fr] sm:grid-cols-[1fr_1fr_max-content] gap-x-4 gap-y-12 md:pt-12 items-center ">
+				<div
+					className="grid grid-cols-[3fr_0.25fr] sm:grid-cols-[1fr_1fr_max-content] gap-x-4 gap-y-12 md:pt-12 items-center "
+					data-aos="fade-up"
+				>
 					<a href="#!" data-mdb-ripple="true">
 						<img src={heroImg} alt="img" className="w-full h-auto" />
 					</a>
@@ -49,6 +52,8 @@ const Hero = () => {
 						<a
 							href="#contact"
 							className="inline-flex items-center p-3 md:p-4 rounded-md text-white text-sm md:text-base bg-navy-400 hover:bg-navy-300 dark:bg-fogra dark:hover:bg-gunmetal group duration-300"
+							data-aos="fade-up"
+							data-aos-delay="300"
 						>
 							Kontakt
 							<BiSend className="ml-3 group-hover:translate-x-[35%] duration-300" />

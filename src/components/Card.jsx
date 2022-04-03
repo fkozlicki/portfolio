@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 import { FaGithub, FaGlobe } from "react-icons/fa";
 
@@ -10,9 +10,25 @@ const Card = ({
 	children,
 	website,
 	github,
+	delay,
 }) => {
+	const [width, setWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+		function handleResize() {
+			setWidth(window.innerWidth);
+		}
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, [width]);
+
 	return (
-		<div className="flex flex-wrap shadow-xl max-w-sm rounded-xl overflow-hidden dark:bg-navy-600 duration-300">
+		<div
+			className="flex flex-wrap shadow-xl max-w-sm rounded-xl overflow-hidden dark:bg-navy-600 duration-300"
+			data-aos="fade-up"
+			data-aos-delay={width >= 1280 ? delay : "0"}
+		>
 			<div className="grow shrink flex-basis-full">
 				<a
 					href="#!"

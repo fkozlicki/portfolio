@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import { BiSend } from "react-icons/bi";
+import SectionHeader from "./SectionHeader";
 
 const Contact = () => {
 	const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -11,7 +12,7 @@ const Contact = () => {
 	const formEl = useRef();
 
 	const isEmail = (email) => {
-		return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+		return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
 			email
 		);
 	};
@@ -56,16 +57,17 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="py-14 sm:py-20" id="contact">
-			<div className="text-gray-700 dark:text-white text-center mb-12 duration-300">
-				<h1 className="text-center font-semibold text-2xl md:text-4xl mb-1">
-					Kontakt
-				</h1>
-				<h1 className="text-xs md:text-sm text-gray-400">
-					Chętna/y do współpracy. Pisz śmiało!
-				</h1>
-			</div>
-			<div className="m-auto max-w-md sm:max-w-lg lg:max-w-2xl">
+		<section className="py-16 sm:py-28 md:py-36" id="contact">
+			<SectionHeader
+				title={"Kontakt"}
+				subtitle={"Chętna/y do współpracy. Pisz śmiało!"}
+			/>
+			<div
+				className="m-auto max-w-md sm:max-w-lg lg:max-w-2xl"
+				data-aos="zoom-in-up"
+				data-aos-delay="300"
+				data-aos-once="true"
+			>
 				<form onSubmit={sendEmail} ref={formEl} className="mx-3 sm:mx-6">
 					<div className="flex flex-wrap gap-5 p-4 mb-4 bg-aliceblue dark:bg-navy-600 text-sm md:text-base rounded-lg duration-300">
 						<div className="flex flex-col p-3 bg-white bg-aliceblue2 dark:bg-navy-500 flex-[100%] lg:flex-1 rounded duration-300">
