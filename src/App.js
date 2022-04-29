@@ -14,23 +14,21 @@ import {
 
 function App() {
 	useEffect(() => {
-		Aos.init({ duration: 1500 });
+		Aos.init({ duration: 1500, once: true });
 	}, []);
 
 	return (
 		<>
-			<header>
-				<Navbar />
-				<Hero />
-			</header>
+			<Navbar />
+			<Hero />
 			<main className="md:px-4 bg-powder dark:bg-navy-700 duration-300 overflow-hidden">
 				<About />
 				<Technologies />
 				<Portfolio />
 				<Contact />
 			</main>
-			<ScrollBtn />
 			<Footer />
+			<ScrollBtn />
 		</>
 	);
 }
