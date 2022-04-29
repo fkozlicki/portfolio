@@ -5,27 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BsBriefcaseFill } from "react-icons/bs";
 
 const Navbar = () => {
-	const [height, setHeight] = useState(window.scrollY);
 	const [darkTheme, setDarkTheme] = useState(false);
-
-	useEffect(() => {
-		function handleScroll() {
-			setHeight(window.scrollY);
-			if (
-				height >=
-				document.body.offsetHeight -
-					document.documentElement.clientHeight -
-					document.querySelector(".footer").offsetHeight / 2.5
-			) {
-				document.querySelector(".navbar").classList.add("top-[70%]");
-			} else {
-				document.querySelector(".navbar").classList.remove("top-[70%]");
-			}
-		}
-		window.addEventListener("scroll", handleScroll);
-
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [height]);
 
 	useEffect(() => {
 		localStorage.theme === "dark" ? setDarkTheme(true) : setDarkTheme(false);
@@ -37,99 +17,132 @@ const Navbar = () => {
 			: document.documentElement.classList.remove("dark");
 	}, [darkTheme]);
 
-	return (
-		<nav className="fixed top-[90%] left-[50%] translate-x-[-50%] flex bg-navy-400/[80%] dark:bg-fogra/[90%] md:bg-transparent md:dark:bg-transparent navbar md:absolute md:top-0 md:w-full md:max-w-screen-md xl:max-w-screen-lg md:py-6 md:px-4 md:border-b border-gray-300 dark:border-gray-600 rounded-full overflow-hidden md:rounded-none backdrop-blur-sm z-50 dark:text-white duration-300">
-			<a
-				href="/"
-				className="hidden md:block text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
-			>
-				Filip
-			</a>
-			<ul className="gap-4 uppercase ml-auto hidden md:flex font-medium">
-				<li>
-					<a
-						href="#about"
-						className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
-					>
-						O mnie
-					</a>
-				</li>
-				<li>
-					<a
-						href="#portfolio"
-						className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
-					>
-						Portfolio
-					</a>
-				</li>
-				<li>
-					<a
-						href="#contact"
-						className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
-					>
-						Kontakt
-					</a>
-				</li>
-			</ul>
-			<ul className="inline-flex items-center justify-between md:hidden text-white">
-				<li>
-					<a
-						href="#hero"
-						className="block p-4"
-						data-mdb-ripple="true"
-						data-mdb-ripple-color="light"
-					>
-						<AiFillHome />
-					</a>
-				</li>
-				<li>
-					<a
-						href="#about"
-						className="block p-4"
-						data-mdb-ripple="true"
-						data-mdb-ripple-color="light"
-					>
-						<FaUserAlt />
-					</a>
-				</li>
-				<li>
-					<a
-						href="#portfolio"
-						className="block p-4"
-						data-mdb-ripple="true"
-						data-mdb-ripple-color="light"
-					>
-						<BsBriefcaseFill />
-					</a>
-				</li>
-				<li>
-					<a
-						href="#contact"
-						className="block p-4"
-						data-mdb-ripple="true"
-						data-mdb-ripple-color="light"
-					>
-						<FaEnvelope />
-					</a>
-				</li>
-			</ul>
+	window.addEventListener("scroll", () => {
+		const point =
+			document.body.scrollHeight -
+			document.querySelector("header").offsetHeight -
+			document.querySelector("footer").offsetHeight +
+			64;
 
-			<button
-				className="py-2 px-4 my-2 md:p-0 md:m-0 md:ml-4 border-l border-gray-300/50 md:border-0 text-white md:text-black md:dark:text-white"
-				type="button"
-				onClick={() => {
-					setDarkTheme(!darkTheme);
-					darkTheme
-						? (localStorage.theme = "light")
-						: (localStorage.theme = "dark");
-				}}
-			>
-				{darkTheme ? (
-					<BiSun className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300" />
-				) : (
-					<BiMoon className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300" />
-				)}
-			</button>
+		if (window.scrollY > point) {
+			document.querySelector("nav").classList.add("bottom-[25%]");
+		} else {
+			document.querySelector("nav").classList.remove("bottom-[25%]");
+		}
+	});
+
+	return (
+		<nav
+			className="fixed bottom-[2%] left-[50%] translate-x-[-50%] bg-navy-400/[80%] dark:bg-fogra/[80%] border-gray-300 dark:border-gray-800 rounded-full backdrop-blur-sm z-50 duration-300 dark:text-white md:rounded-none 
+		md:backdrop-blur-0 md:bg-aliceblue md:dark:bg-navy-900 md:w-full md:bottom-[unset] md:py-6 md:px-4 md:border-b"
+		>
+			<div className="flex md:max-w-screen-md xl:max-w-screen-lg m-auto">
+				{/* DESKTOP */}
+				<a
+					href="/"
+					className="hidden md:block text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
+				>
+					Filip
+				</a>
+				{/* DESKTOP */}
+				<ul className="gap-4 uppercase ml-auto hidden md:flex font-medium">
+					<li>
+						<a
+							href="#about"
+							className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
+						>
+							O mnie
+						</a>
+					</li>
+					<li>
+						<a
+							href="#portfolio"
+							className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
+						>
+							Portfolio
+						</a>
+					</li>
+					<li>
+						<a
+							href="#contact"
+							className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white duration-300"
+						>
+							Kontakt
+						</a>
+					</li>
+				</ul>
+				{/* MOBILE */}
+				<ul className="inline-flex items-center justify-between md:hidden text-white">
+					<li>
+						<a
+							href="#hero"
+							className="block p-4"
+							data-mdb-ripple="true"
+							data-mdb-ripple-color="light"
+							aria-label="Home"
+						>
+							<AiFillHome aria-hidden="true" />
+						</a>
+					</li>
+					<li>
+						<a
+							href="#about"
+							className="block p-4"
+							data-mdb-ripple="true"
+							data-mdb-ripple-color="light"
+							aria-label="O mnie"
+						>
+							<FaUserAlt aria-hidden="true" />
+						</a>
+					</li>
+					<li>
+						<a
+							href="#portfolio"
+							className="block p-4"
+							data-mdb-ripple="true"
+							data-mdb-ripple-color="light"
+							aria-label="Portfolio"
+						>
+							<BsBriefcaseFill aria-hidden="true" />
+						</a>
+					</li>
+					<li>
+						<a
+							href="#contact"
+							className="block p-4"
+							data-mdb-ripple="true"
+							data-mdb-ripple-color="light"
+							aria-label="Kontakt"
+						>
+							<FaEnvelope aria-hidden="true" />
+						</a>
+					</li>
+				</ul>
+
+				<button
+					className="py-2 px-4 my-2 md:p-0 md:m-0 md:ml-4 border-l border-gray-300/50 md:border-0 text-white md:text-black md:dark:text-white"
+					type="button"
+					aria-label="Zmień motyw"
+					onClick={() => {
+						setDarkTheme(!darkTheme);
+						darkTheme
+							? (localStorage.theme = "light")
+							: (localStorage.theme = "dark");
+					}}
+				>
+					{darkTheme ? (
+						<BiSun
+							aria-hidden="true"
+							className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300"
+						/>
+					) : (
+						<BiMoon
+							aria-hidden="true"
+							className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300"
+						/>
+					)}
+				</button>
+			</div>
 		</nav>
 	);
 };
