@@ -1,0 +1,13 @@
+{
+	"short-name": "",
+	"name": "Filip Koźlicki - Początkujący Frontend Developer",
+	"icons": [
+		{
+			"src": "logo.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		}
+	],
+	"start-url": ".",
+	"display": "standalone"
+}
