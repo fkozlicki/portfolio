@@ -57,20 +57,15 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="py-16 sm:py-28 md:py-36" id="contact">
+		<section className="pt-8 pb-24 sm:py-28 md:py-36" id="contact">
 			<SectionHeader
 				title={"Kontakt"}
 				subtitle={"Chętna/y do współpracy. Pisz śmiało!"}
 			/>
-			<div
-				className="m-auto max-w-md sm:max-w-lg lg:max-w-2xl"
-				data-aos="zoom-in-up"
-				data-aos-delay="300"
-				data-aos-once="true"
-			>
+			<div className="m-auto max-w-md sm:max-w-lg lg:max-w-2xl">
 				<form onSubmit={sendEmail} ref={formEl} className="mx-3 sm:mx-6">
 					<div className="flex flex-wrap gap-5 p-4 mb-4 bg-aliceblue dark:bg-navy-600 text-sm md:text-base rounded-lg duration-300">
-						<div className="flex flex-col p-3 bg-white bg-aliceblue2 dark:bg-navy-500 flex-[100%] lg:flex-1 rounded duration-300">
+						<div className="flex flex-col p-3 bg-aliceblue2 dark:bg-navy-500 flex-[100%] lg:flex-1 rounded duration-300">
 							<label className="text-gray-400 mb-1" htmlFor="name">
 								Imię
 							</label>
@@ -82,7 +77,7 @@ const Contact = () => {
 								ref={nameEl}
 							/>
 						</div>
-						<div className="flex flex-col p-3 bg-white bg-aliceblue2 dark:bg-navy-500 flex-[100%] lg:flex-1 rounded duration-300">
+						<div className="flex flex-col p-3 bg-aliceblue2 dark:bg-navy-500 flex-[100%] lg:flex-1 rounded duration-300">
 							<label className=" text-gray-400 mb-2" htmlFor="email">
 								Email
 							</label>
@@ -94,7 +89,7 @@ const Contact = () => {
 								ref={emailEl}
 							/>
 						</div>
-						<div className="flex flex-col p-3 bg-white bg-aliceblue2 dark:bg-navy-500 flex-[100%] rounded duration-300">
+						<div className="flex flex-col p-3 bg-aliceblue2 dark:bg-navy-500 flex-[100%] rounded duration-300">
 							<label className="text-gray-400 mb-2" htmlFor="message">
 								Wiadomość
 							</label>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Link from "./Link";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 
 const Card = ({
@@ -10,7 +10,6 @@ const Card = ({
 	children,
 	website,
 	github,
-	delay,
 }) => {
 	const [width, setWidth] = useState(window.innerWidth);
 
@@ -24,26 +23,21 @@ const Card = ({
 	}, [width]);
 
 	return (
-		<div
-			className="flex flex-wrap shadow-xl max-w-sm rounded-xl overflow-hidden dark:bg-navy-600 duration-300"
-			data-aos="fade-up"
-			data-aos-delay={width >= 1280 ? delay : "0"}
-		>
+		<div className="flex flex-wrap shadow-xl max-w-sm rounded-xl overflow-hidden dark:bg-navy-600 duration-300">
 			<div className="grow shrink flex-basis-full">
-				<a
-					href="#!"
-					className="block overflow-hidden relative after:w-full after:h-full after:absolute after:bg-black/25 after:top-0 group"
-				>
+				<div className="overflow-hidden relative after:w-full after:h-full after:absolute after:bg-black/25 after:top-0 group">
 					<img
 						src={image}
 						alt={alt}
 						className="group-hover:scale-110 duration-300"
+						width={1680}
+						height={1050}
 					/>
-				</a>
+				</div>
 				<div className="p-6 dark:text-white duration-300">
-					<h5 className="text-lg md:text-xl text-gray-700 dark:text-white font-medium mb-2">
+					<h1 className="text-lg md:text-xl text-gray-700 dark:text-white font-medium mb-2">
 						{title}
-					</h5>
+					</h1>
 					<div className="flex gap-3 mb-2 text-sm sm:text-md">{children}</div>
 					<p className="text-sm md:text-base dark:font-extralight">
 						{description}
@@ -51,22 +45,12 @@ const Card = ({
 				</div>
 			</div>
 			<div className="grow shrink basis-full self-end flex justify-between px-6 pb-6 text-xl md:text-2xl text-gray-700 dark:text-gray-300">
-				<a
-					href={website}
-					target="_blank"
-					rel="noreferrer noopener"
-					className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white duration-300"
-				>
-					<FaGlobe />
-				</a>
-				<a
-					href={github}
-					target="_blank"
-					rel="noreferrer noopener"
-					className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white duration-300"
-				>
-					<FaGithub />
-				</a>
+				<Link href={website} label="website">
+					<FaGlobe aria-hidden="true" />
+				</Link>
+				<Link href={github} label="website">
+					<FaGithub aria-hidden="true" />
+				</Link>
 			</div>
 		</div>
 	);

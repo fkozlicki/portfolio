@@ -1,8 +1,9 @@
 const SectionHeader = ({ title, subtitle }) => {
 	return (
 		<div
-			className="mb-12 md:mb-16 text-gray-700 dark:text-white text-center"
+			className="mb-8 md:mb-16 text-gray-700 dark:text-white text-center"
 			data-aos="fade-left"
+			data-aos-delay="150"
 		>
 			<h1 className="text-center font-semibold text-2xl md:text-4xl mb-1">
 				{title}
