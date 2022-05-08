@@ -9,9 +9,6 @@ const Navbar = () => {
 
 	useEffect(() => {
 		localStorage.theme === "dark" ? setDarkTheme(true) : setDarkTheme(false);
-	}, []);
-
-	useEffect(() => {
 		darkTheme
 			? document.documentElement.classList.add("dark")
 			: document.documentElement.classList.remove("dark");
@@ -25,8 +22,10 @@ const Navbar = () => {
 			64;
 
 		if (window.scrollY > point) {
+			document.querySelector("nav").classList.remove("bottom-[2%]");
 			document.querySelector("nav").classList.add("bottom-[25%]");
 		} else {
+			document.querySelector("nav").classList.add("bottom-[2%]");
 			document.querySelector("nav").classList.remove("bottom-[25%]");
 		}
 	});
@@ -81,7 +80,7 @@ const Navbar = () => {
 							data-mdb-ripple-color="light"
 							aria-label="Home"
 						>
-							<AiFillHome aria-hidden="true" />
+							<AiFillHome />
 						</a>
 					</li>
 					<li>
@@ -92,7 +91,7 @@ const Navbar = () => {
 							data-mdb-ripple-color="light"
 							aria-label="O mnie"
 						>
-							<FaUserAlt aria-hidden="true" />
+							<FaUserAlt />
 						</a>
 					</li>
 					<li>
@@ -103,7 +102,7 @@ const Navbar = () => {
 							data-mdb-ripple-color="light"
 							aria-label="Portfolio"
 						>
-							<BsBriefcaseFill aria-hidden="true" />
+							<BsBriefcaseFill />
 						</a>
 					</li>
 					<li>
@@ -114,7 +113,7 @@ const Navbar = () => {
 							data-mdb-ripple-color="light"
 							aria-label="Kontakt"
 						>
-							<FaEnvelope aria-hidden="true" />
+							<FaEnvelope />
 						</a>
 					</li>
 				</ul>
@@ -131,15 +130,9 @@ const Navbar = () => {
 					}}
 				>
 					{darkTheme ? (
-						<BiSun
-							aria-hidden="true"
-							className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300"
-						/>
+						<BiSun className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300" />
 					) : (
-						<BiMoon
-							aria-hidden="true"
-							className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300"
-						/>
+						<BiMoon className="md:text-gray-500 md:hover:text-black md:dark:text-gray-400 md:dark:hover:text-white duration-300" />
 					)}
 				</button>
 			</div>
