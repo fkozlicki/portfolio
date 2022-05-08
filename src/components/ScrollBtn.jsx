@@ -3,7 +3,7 @@ const ScrollBtn = () => {
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	};
-	window.onscroll = function () {
+	window.onscroll = () => {
 		scrollFunction();
 	};
 
@@ -29,7 +29,6 @@ const ScrollBtn = () => {
 			id="btn-back-to-top"
 		>
 			<svg
-				aria-hidden="true"
 				focusable="false"
 				data-prefix="fas"
 				className="w-3 h-3"

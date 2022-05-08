@@ -22,16 +22,16 @@ const Hero = () => {
 					/>
 					<div className="self-center items-end flex flex-col gap-6 text-lg md:text-xl lg:translate-x-20 text-gray-800">
 						<Link href="https://github.com/fkozlicki" label="Github">
-							<FaGithub aria-hidden="true" />
+							<FaGithub />
 						</Link>
 						<Link
 							href="https://www.linkedin.com/in/fkozlicki/"
 							label="LinkedIn"
 						>
-							<FaLinkedin aria-hidden="true" />
+							<FaLinkedin />
 						</Link>
 						<Link href="https://twitter.com/FKozlicki" label="Twitter">
-							<FaTwitter aria-hidden="true" />
+							<FaTwitter />
 						</Link>
 					</div>
 					<div className="dark:text-white col-[1/3] md:col-[1/2] md:row-[1] duration-300">

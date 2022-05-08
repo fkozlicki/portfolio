@@ -13,13 +13,13 @@ const Footer = () => {
 				</a>
 				<div className="flex gap-6 text-lg md:text-xl text-gray-800 dark:text-white">
 					<Link href="https://github.com/fkozlicki" label="Github">
-						<FaGithub aria-hidden="true" />
+						<FaGithub />
 					</Link>
 					<Link href="https://www.linkedin.com/in/fkozlicki/" label="LinkedIn">
-						<FaLinkedin aria-hidden="true" />
+						<FaLinkedin />
 					</Link>
 					<Link href="https://twitter.com/FKozlicki" label="Twitter">
-						<FaTwitter aria-hidden="true" />
+						<FaTwitter />
 					</Link>
 				</div>
 				<p className="mt-4 pb-4 text-xs dark:text-gray-400">
