@@ -1,29 +1,35 @@
 import { FaReact, FaNodeJs, FaBootstrap, FaSass } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
-import { SiExpress, SiNextdotjs, SiMaterialui } from "react-icons/si";
+import {
+	SiExpress,
+	SiNextdotjs,
+	SiMaterialui,
+	SiTypescript,
+} from "react-icons/si";
 
 const projects = [
 	{
-		title: "Aplikacja CRUD",
-		desc: "Aplikacja fullstack z funkcjonalnościami CRUD - użytkownik może tworzyć, czytać, aktualizować oraz usuwać przepisy. Do jej zbudowania użyłem MongoDB, ExpressJS, React i NodeJS. W pełni funkcjonalna, responsywna z przyjemnym dla oka interfejsem.",
-		image: "/images/sweetrecipes.webp",
-		alt: "image1",
+		title: "Ulubiony film",
+		desc: "Aplikacja fullstack z funkcjonalnościami CRUD - użytkownik może tworzyć, czytać, aktualizować oraz usuwać swoje ulubione filmy. Do jej zbudowania użyłem MongoDB, ExpressJS, React i NodeJS. W pełni funkcjonalna, responsywna z przyjemnym dla oka interfejsem.",
+		image: "/images/favourite-movies.webp",
+		alt: "",
 		technologies: (
 			<>
 				<DiMongodb />
 				<SiExpress />
 				<FaReact />
 				<FaNodeJs />
+				<SiTypescript />
 			</>
 		),
-		github: "https://github.com/fkozlicki/recipes-app",
-		website: "https://recipe-crud-app.netlify.app/",
+		github: "https://github.com/fkozlicki/favourite-movie",
+		website: "https://favourite-movie-client.vercel.app/",
 	},
 	{
-		title: "Sklep Online",
+		title: "Click.it",
 		desc: "W pełni funkcjonalne i responsywne demo aplikacji sklepu internetowego połączona z CommerceJS i Stripe, zbudowana w React przy użyciu Material Design. Użytkownik może dodawać/usuwać przedmioty z koszyka oraz składać zamówienia przy użyciu formularza.",
 		image: "/images/ec.webp",
-		alt: "image2",
+		alt: "",
 		technologies: (
 			<>
 				<FaReact />
@@ -36,8 +42,8 @@ const projects = [
 	{
 		title: "Blog",
 		desc: "Mój osobisty blog zbudowany przy użyciu React'a, Next.js, MDB, Sass, GraphQL oraz połączony z API - GraphCMS. Zawiera moje własne artykuły, kategorie, informacje o autorze, daty publikacji oraz komentarze, które może opublikować każdy użytkownik.",
-		image: "/images/blog-image.webp",
-		alt: "image3",
+		image: "/images/blog.webp",
+		alt: "",
 		technologies: (
 			<>
 				<FaReact />
