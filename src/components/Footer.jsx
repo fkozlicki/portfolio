@@ -23,7 +23,7 @@ const Footer = () => {
 					</Link>
 				</div>
 				<p className="mt-4 pb-4 text-xs dark:text-gray-400">
-					© 2022 Filip Koźlicki. All Rights Reserved.
+					© 2022 Filip Koźlicki.
 				</p>
 			</div>
 		</footer>
