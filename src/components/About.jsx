@@ -17,11 +17,11 @@ const About = () => {
 					/>
 
 					<p className="text-[15px] md:text-base text-center md:text-left dark:font-extralight">
-						Cześć! Jestem Filip, mam 20 lat i jestem studentem pierwszego roku
-						informatyki na UMCS'ie. Front-endu uczę się samemu i aktualnie
-						jestem na etapie rozwijania umiejętności budowania aplikacji
-						webowych przy użyciu nowoczesnych narzędzi. Sprawdź i oceń co
-						potrafię ↓
+						Nazywam się Filip Koźlicki, mam 20 lat i jestem początkującym
+						programistą. Piszę proste strony i aplikacje internetowe w React'ie.
+						Programowaniem interesuję się od dawna, natomiast frontendu uczę się
+						od roku. Aktualnie skupiam się na rozwijaniu umiejętności oraz
+						poznawaniu nowych techologii. Sprawdź i oceń co potrafię.
 					</p>
 				</div>
 			</div>
