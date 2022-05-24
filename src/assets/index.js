@@ -10,7 +10,7 @@ import {
 const projects = [
 	{
 		title: "Ulubiony film",
-		desc: "Aplikacja fullstack z funkcjonalnościami CRUD - użytkownik może tworzyć, czytać, aktualizować oraz usuwać swoje ulubione filmy. Do jej zbudowania użyłem MongoDB, ExpressJS, React i NodeJS. W pełni funkcjonalna, responsywna z przyjemnym dla oka interfejsem.",
+		desc: "Aplikacja z funkcjami CRUD, komunikująca się z bazą danych poprzez REST API. Użytkownik może odczytywać, dodawać, usuwać i aktualizować swoje ulubione filmy.",
 		image: "/images/favourite-movies.webp",
 		alt: "",
 		technologies: (
@@ -27,7 +27,7 @@ const projects = [
 	},
 	{
 		title: "Click.it",
-		desc: "W pełni funkcjonalne i responsywne demo aplikacji sklepu internetowego połączona z CommerceJS i Stripe, zbudowana w React przy użyciu Material Design. Użytkownik może dodawać/usuwać przedmioty z koszyka oraz składać zamówienia przy użyciu formularza.",
+		desc: "Aplikacja sklepu internetowego połączona z CommerceJS i Stripe. Użytkownik może dodawać/usuwać przedmioty z koszyka oraz składać zamówienia po uzupełnieniu danych kontaktowych.",
 		image: "/images/ec.webp",
 		alt: "",
 		technologies: (
@@ -41,7 +41,7 @@ const projects = [
 	},
 	{
 		title: "Blog",
-		desc: "Mój osobisty blog zbudowany przy użyciu React'a, Next.js, MDB, Sass, GraphQL oraz połączony z API - GraphCMS. Zawiera moje własne artykuły, kategorie, informacje o autorze, daty publikacji oraz komentarze, które może opublikować każdy użytkownik.",
+		desc: "Mój osobisty blog zarządzany przez GraphCMS, zbudowany przy użyciu Next.js oraz GraphQL. Zawiera moje własne artykuły, kategorie, daty publikacji oraz komentarze, które może opublikować każdy użytkownik.",
 		image: "/images/blog.webp",
 		alt: "",
 		technologies: (
