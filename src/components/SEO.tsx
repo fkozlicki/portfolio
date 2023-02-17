@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-const DOMAIN = 'https://www.fkozlicki.pl';
-const DEFAULT_OG_IMAGE = '/ogimage.png';
+const DOMAIN = process.env.NEXT_APP_DOMAIN ?? 'https://www.fkozlicki.pl';
+const DEFAULT_OG_IMAGE = DOMAIN + '/ogimage.png';
 
 export default function SEO({
 	title = 'Filip Koźlicki',
