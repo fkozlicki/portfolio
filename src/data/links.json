@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Email",
+		"link": "filip.kozlickii@gmail.com",
+		"href": "mailto:filip.kozlickii@gmail.com"
+	},
+	{
+		"name": "Github",
+		"link": "@fkozlicki",
+		"href": "https://github.com/fkozlicki"
+	},
+	{
+		"name": "LinkedIn",
+		"link": "@fkozlicki",
+		"href": "https://www.linkedin.com/in/fkozlicki/"
+	},
+	{
+		"name": "Twitter",
+		"link": "@fkozlicki",
+		"href": "https://twitter.com/fkozlicki"
+	}
+]
