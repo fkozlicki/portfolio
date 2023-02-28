@@ -7,9 +7,18 @@ interface ProjectProps {
 	description: string;
 	tags: string[];
 	index: number;
+	demo: string;
+	repo: string;
 }
 
-const Project = ({ name, description, tags, index }: ProjectProps) => {
+const Project = ({
+	name,
+	description,
+	tags,
+	index,
+	demo,
+	repo,
+}: ProjectProps) => {
 	const [{ x, y }, setMouse] = useState({
 		x: 0,
 		y: 0,
@@ -57,8 +66,8 @@ const Project = ({ name, description, tags, index }: ProjectProps) => {
 					<NameWrapper>
 						<ProjectName>{name}</ProjectName>
 						<LinksWrapper>
-							<ProjectLink href="#">Code</ProjectLink>
-							<ProjectLink href="#">Demo</ProjectLink>
+							<ProjectLink href={repo}>Code</ProjectLink>
+							<ProjectLink href={demo}>Demo</ProjectLink>
 						</LinksWrapper>
 					</NameWrapper>
 					<ProjectDescription>{description}</ProjectDescription>
