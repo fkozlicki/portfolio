@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../styled/Container';
+import { Container, Section } from '../styled/Utils';
 import SectionHeader from './SectionHeader';
 import projects from '../data/projects.json';
 import Project from './Project';
 
 const Projects = () => {
 	return (
-		<ProjectsSection data-scroll-section>
+		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>Projects</SectionHeader>
 				<ProjectsWrapper>
@@ -16,15 +16,11 @@ const Projects = () => {
 					))}
 				</ProjectsWrapper>
 			</Container>
-		</ProjectsSection>
+		</Section>
 	);
 };
 
 export default Projects;
-
-const ProjectsSection = styled.section`
-	padding-block: 25vh;
-`;
 
 const ProjectsWrapper = styled.div`
 	display: grid;

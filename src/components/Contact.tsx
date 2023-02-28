@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../styled/Container';
+import { Container, Section } from '../styled/Utils';
 import SectionHeader from './SectionHeader';
 import links from '../data/links.json';
 
 const Contact = () => {
 	return (
-		<ContactSection data-scroll-section>
+		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>Contact</SectionHeader>
 				<LinksContainer>
@@ -18,15 +18,11 @@ const Contact = () => {
 					))}
 				</LinksContainer>
 			</Container>
-		</ContactSection>
+		</Section>
 	);
 };
 
 export default Contact;
-
-const ContactSection = styled.section`
-	padding-block: 25vh;
-`;
 
 const LinksContainer = styled.div`
 	display: grid;
