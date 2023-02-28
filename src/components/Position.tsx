@@ -9,6 +9,7 @@ interface PositionProps {
 	company: string;
 	description: string;
 	tags: string[];
+	website: string;
 }
 
 const Position = ({
@@ -18,11 +19,12 @@ const Position = ({
 	company,
 	description,
 	tags,
+	website,
 }: PositionProps) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const circleRef = useRef<HTMLDivElement>(null);
 	const lineRef = useRef<HTMLDivElement>(null);
-	const positionRef = useRef<HTMLDivElement>(null);
+	const positionRef = useRef<HTMLAnchorElement>(null);
 	const descriptionRef = useRef<HTMLDivElement>(null);
 	const tagsRef = useRef<HTMLDivElement>(null);
 	const yearsRef = useRef<HTMLDivElement>(null);
@@ -86,7 +88,7 @@ const Position = ({
 				<Line ref={lineRef}></Line>
 			</LineWrapper>
 			<ContentWrapper>
-				<PositionName ref={positionRef}>
+				<PositionName href={website} ref={positionRef}>
 					{position} - {company}
 				</PositionName>
 				<Description ref={descriptionRef}>{description}</Description>
@@ -100,11 +102,14 @@ export default Position;
 
 const PositionWrapper = styled.div`
 	display: flex;
-	gap: 24px;
+	gap: 16px;
+	@media screen and (min-width: 640px) {
+		gap: 24px;
+	}
 `;
 
 const Years = styled.div`
-	font-size: 24px;
+	font-size: 20px;
 
 	@media screen and (min-width: 768px) {
 		font-size: 28px;
@@ -121,31 +126,50 @@ const LineWrapper = styled.div`
 `;
 
 const Circle = styled.div`
-	width: 20px;
-	height: 20px;
+	width: 15px;
+	height: 15px;
+	@media screen and (min-width: 640px) {
+		width: 20px;
+		height: 20px;
+	}
 	background: white;
 	border-radius: 100%;
 `;
 
 const Line = styled.div`
-	width: 4px;
+	width: 2px;
+	@media screen and (min-width: 640px) {
+		width: 4px;
+	}
 	height: 100%;
 	background: white;
 `;
 
 const ContentWrapper = styled.div`
-	padding-bottom: 96px;
+	padding-bottom: 2rem;
+	@media screen and (min-width: 640px) {
+		padding-bottom: 3.5rem;
+	}
+	@media screen and (min-width: 768px) {
+		padding-bottom: 5rem;
+	}
 `;
 
-const PositionName = styled.h3`
+const PositionName = styled.a`
 	font-weight: 500;
 	font-size: 24px;
+	color: white;
+	text-decoration: none;
 
 	@media screen and (min-width: 768px) {
 		font-size: 28px;
 	}
 	@media screen and (min-width: 1024px) {
 		font-size: 32px;
+	}
+
+	&:hover {
+		text-decoration: underline;
 	}
 `;
 
