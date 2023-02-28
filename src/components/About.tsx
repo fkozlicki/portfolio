@@ -1,29 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../styled/Container';
+import { Container, Section } from '../styled/Utils';
 import SectionHeader from './SectionHeader';
 
 const About = () => {
 	return (
-		<AboutSection data-scroll-section>
+		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>About</SectionHeader>
 				<Description>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus,
-					beatae eveniet architecto alias laboriosam incidunt autem, rerum
-					accusamus aspernatur consectetur inventore quos quia distinctio natus
-					ducimus reiciendis earum corrupti iste.es
+					I am computer science student based in Lublin, Poland. I am into
+					developing web applications. Mainly focused on React with TypeScript.
+					Really like exploring new technologies by building interesting
+					projects.
 				</Description>
 			</Container>
-		</AboutSection>
+		</Section>
 	);
 };
 
 export default About;
-
-const AboutSection = styled.section`
-	padding-block: 25vh;
-`;
 
 const Description = styled.div`
 	color: #ffffffb0;
