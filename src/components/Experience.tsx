@@ -1,17 +1,22 @@
 import React from 'react';
 import { Container, Section } from '../styled/Utils';
 import SectionHeader from './SectionHeader';
-import positions from '../data/positions.json';
-import Position from './Position';
+import Job from './Job';
+import { IJobFields } from '../@types/generated/contentful';
+import { Entry } from 'contentful';
 
-const Experience = () => {
+interface ExperienceProps {
+	jobs: Entry<IJobFields>[];
+}
+
+const Experience = ({ jobs }: ExperienceProps) => {
 	return (
 		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>Experience</SectionHeader>
 				<div>
-					{positions.map((position, index) => (
-						<Position key={index} {...position} />
+					{jobs.map(({ fields }, index) => (
+						<Job key={index} {...fields} />
 					))}
 				</div>
 			</Container>

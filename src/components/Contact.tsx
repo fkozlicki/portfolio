@@ -2,18 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Section } from '../styled/Utils';
 import SectionHeader from './SectionHeader';
-import links from '../data/links.json';
+import { ILinkFields } from '../@types/generated/contentful';
+import { Entry } from 'contentful';
 
-const Contact = () => {
+interface ContactProps {
+	links: Entry<ILinkFields>[];
+}
+
+const Contact = ({ links }: ContactProps) => {
 	return (
 		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>Contact</SectionHeader>
 				<LinksContainer>
-					{links.map(({ name, link, href }, index) => (
+					{links.map(({ fields: { to, display, href } }, index) => (
 						<LinkWrapper key={index}>
-							<SocialName>{name}</SocialName>
-							<SocialLink href={href}>{link}</SocialLink>
+							<SocialName>{to}</SocialName>
+							<SocialLink href={href}>{display}</SocialLink>
 						</LinkWrapper>
 					))}
 				</LinksContainer>

@@ -2,17 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Section } from '../styled/Utils';
 import SectionHeader from './SectionHeader';
-import projects from '../data/projects.json';
 import Project from './Project';
+import { IProjectFields } from '../@types/generated/contentful';
+import { Entry } from 'contentful';
 
-const Projects = () => {
+interface ProjectsProps {
+	projects: Entry<IProjectFields>[];
+}
+
+const Projects = ({ projects }: ProjectsProps) => {
 	return (
 		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>Projects</SectionHeader>
 				<ProjectsWrapper>
-					{projects.map((project, index) => (
-						<Project key={index} index={index} {...project} />
+					{projects.map(({ fields }, index) => (
+						<Project key={index} index={index} {...fields} />
 					))}
 				</ProjectsWrapper>
 			</Container>

@@ -8,7 +8,7 @@ interface ProjectProps {
 	tags: string[];
 	index: number;
 	demo: string;
-	repo: string;
+	code: string;
 }
 
 const Project = ({
@@ -17,7 +17,7 @@ const Project = ({
 	tags,
 	index,
 	demo,
-	repo,
+	code,
 }: ProjectProps) => {
 	const [{ x, y }, setMouse] = useState({
 		x: 0,
@@ -42,7 +42,7 @@ const Project = ({
 			duration: 0.75,
 			lazy: false,
 		});
-	}, []);
+	}, [index]);
 
 	const hoverProject = (event: MouseEvent) => {
 		const { clientX, clientY } = event;
@@ -66,7 +66,7 @@ const Project = ({
 					<NameWrapper>
 						<ProjectName>{name}</ProjectName>
 						<LinksWrapper>
-							<ProjectLink href={repo}>Code</ProjectLink>
+							<ProjectLink href={code}>Code</ProjectLink>
 							<ProjectLink href={demo}>Demo</ProjectLink>
 						</LinksWrapper>
 					</NameWrapper>
@@ -162,6 +162,9 @@ const LinksWrapper = styled.div`
 const NameWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
 `;
 
 const Shine = styled.div`
@@ -182,8 +185,7 @@ const Shine = styled.div`
 
 const ProjectName = styled.h4`
 	font-weight: 500;
-
-	font-size: 24px;
+	font-size: 20px;
 
 	@media screen and (min-width: 768px) {
 		font-size: 28px;
@@ -207,8 +209,8 @@ const ProjectDescription = styled.p`
 
 const ProjectTags = styled.div`
 	color: #ffffff88;
-
 	font-size: 14px;
+
 	@media screen and (min-width: 768px) {
 		font-size: 16px;
 	}

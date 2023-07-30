@@ -2,25 +2,25 @@ import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-interface PositionProps {
-	startYear: number;
-	endYear?: number;
-	position: string;
+interface JobProps {
+	firstYear: number;
+	lastYear?: number;
+	title: string;
 	company: string;
 	description: string;
 	tags: string[];
 	website: string;
 }
 
-const Position = ({
-	startYear,
-	endYear,
-	position,
+const Job = ({
+	firstYear,
+	lastYear,
+	title,
 	company,
 	description,
 	tags,
 	website,
-}: PositionProps) => {
+}: JobProps) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const circleRef = useRef<HTMLDivElement>(null);
 	const lineRef = useRef<HTMLDivElement>(null);
@@ -80,8 +80,8 @@ const Position = ({
 	return (
 		<PositionWrapper ref={wrapperRef}>
 			<Years ref={yearsRef}>
-				{startYear}
-				{endYear && `- ${endYear}`}
+				<span>{firstYear}</span>
+				<span>{lastYear && `- ${lastYear}`}</span>
 			</Years>
 			<LineWrapper>
 				<Circle ref={circleRef} />
@@ -89,7 +89,7 @@ const Position = ({
 			</LineWrapper>
 			<ContentWrapper>
 				<PositionName href={website} ref={positionRef}>
-					{position} - {company}
+					{title} - {company}
 				</PositionName>
 				<Description ref={descriptionRef}>{description}</Description>
 				<Tags ref={tagsRef}>{tagsString}</Tags>
@@ -98,7 +98,7 @@ const Position = ({
 	);
 };
 
-export default Position;
+export default Job;
 
 const PositionWrapper = styled.div`
 	display: flex;
@@ -109,7 +109,7 @@ const PositionWrapper = styled.div`
 `;
 
 const Years = styled.div`
-	font-size: 20px;
+	font-size: 16px;
 
 	@media screen and (min-width: 768px) {
 		font-size: 28px;
@@ -157,7 +157,7 @@ const ContentWrapper = styled.div`
 
 const PositionName = styled.a`
 	font-weight: 500;
-	font-size: 24px;
+	font-size: 20px;
 	color: white;
 	text-decoration: none;
 

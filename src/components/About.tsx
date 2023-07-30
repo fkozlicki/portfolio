@@ -3,17 +3,16 @@ import styled from 'styled-components';
 import { Container, Section } from '../styled/Utils';
 import SectionHeader from './SectionHeader';
 
-const About = () => {
+interface AboutProps {
+	content: string;
+}
+
+const About = ({ content }: AboutProps) => {
 	return (
 		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>About</SectionHeader>
-				<Description>
-					I am computer science student based in Lublin, Poland. I am into
-					developing web applications. Mainly focused on React with TypeScript.
-					Really like exploring new technologies by building interesting
-					projects.
-				</Description>
+				<Description>{content}</Description>
 			</Container>
 		</Section>
 	);

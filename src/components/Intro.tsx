@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Section } from '../styled/Utils';
 
-const Intro = () => {
+interface IntroProps {
+	firstName: string;
+	lastName: string;
+	title: string;
+}
+
+const Intro = ({ firstName, lastName, title }: IntroProps) => {
 	return (
 		<Section data-scroll-section>
 			<Container>
@@ -13,7 +19,7 @@ const Intro = () => {
 						data-scroll-direction="horizontal"
 						data-scroll-position="left"
 					>
-						Filip
+						{firstName}
 					</Name>
 					<Name
 						data-scroll
@@ -21,11 +27,11 @@ const Intro = () => {
 						data-scroll-direction="horizontal"
 						data-scroll-position="left"
 					>
-						Koźlicki
+						{lastName}
 					</Name>
 				</h1>
 				<Title data-scroll data-scroll-speed="1" data-scroll-position="top">
-					Front-end Developer
+					{title}
 				</Title>
 			</Container>
 		</Section>
