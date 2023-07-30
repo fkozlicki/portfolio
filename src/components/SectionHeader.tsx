@@ -12,8 +12,8 @@ const SectionHeader = ({ children }: SectionHeaderProps) => {
 				<HeaderContent
 					key={index}
 					data-scroll
-					data-scroll-speed="6"
-					data-scroll-delay={(0.04 + 0.01 * (index + 1)).toFixed(2)}
+					data-scroll-speed="3"
+					data-scroll-delay={(0.04 + (0.02 * (index + 1))).toFixed(2)}
 				>
 					{letter}
 				</HeaderContent>
@@ -27,7 +27,7 @@ export default SectionHeader;
 const StyledHeader = styled.h3`
 	font-size: clamp(32px, 5vw, 128px);
 	font-weight: 500;
-	margin-bottom: 5vw;
+	margin-bottom: clamp(32px, 5vw, 50px);
 	text-transform: uppercase;
 `;
 
