@@ -13,14 +13,14 @@ export default function App({ Component, pageProps }: AppProps) {
 		<LocomotiveScrollProvider
 			options={{
 				smooth: true,
-				multiplier: 1.2,
+				multiplier: 2.5,
 				smartphone: {
-					smooth: true
+					smooth: true,
 				},
 				tablet: {
-					smooth: true
+					smooth: true,
 				},
-				lerp: 0.03
+				lerp: 0.03,
 			}}
 			watch={[]}
 			location={asPath}
