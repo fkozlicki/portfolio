@@ -88,7 +88,7 @@ const Job = ({
 				<Line ref={lineRef}></Line>
 			</LineWrapper>
 			<ContentWrapper>
-				<PositionName href={website} ref={positionRef}>
+				<PositionName href={website} ref={positionRef} target="_blank">
 					{title} - {company}
 				</PositionName>
 				<Description ref={descriptionRef}>{description}</Description>

@@ -66,8 +66,12 @@ const Project = ({
 					<NameWrapper>
 						<ProjectName>{name}</ProjectName>
 						<LinksWrapper>
-							<ProjectLink href={code}>Code</ProjectLink>
-							<ProjectLink href={demo}>Demo</ProjectLink>
+							<ProjectLink href={code} target="_blank">
+								Code
+							</ProjectLink>
+							<ProjectLink href={demo} target="_blank">
+								Demo
+							</ProjectLink>
 						</LinksWrapper>
 					</NameWrapper>
 					<ProjectDescription>{description}</ProjectDescription>

@@ -18,7 +18,9 @@ const Contact = ({ links }: ContactProps) => {
 					{links.map(({ fields: { to, display, href } }, index) => (
 						<LinkWrapper key={index}>
 							<SocialName>{to}</SocialName>
-							<SocialLink href={href}>{display}</SocialLink>
+							<SocialLink href={href} target="_blank">
+								{display}
+							</SocialLink>
 						</LinkWrapper>
 					))}
 				</LinksContainer>
