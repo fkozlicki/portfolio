@@ -11,14 +11,18 @@ interface ProjectsProps {
 }
 
 const Projects = ({ projects }: ProjectsProps) => {
+	console.log(projects);
+
 	return (
 		<Section data-scroll-section>
 			<Container>
 				<SectionHeader>Projects</SectionHeader>
 				<ProjectsWrapper>
-					{projects.map(({ fields }, index) => (
-						<Project key={index} index={index} {...fields} />
-					))}
+					{projects
+						.sort((a, b) => a.fields.order - b.fields.order)
+						.map(({ fields }, index) => (
+							<Project key={index} index={index} {...fields} />
+						))}
 				</ProjectsWrapper>
 			</Container>
 		</Section>

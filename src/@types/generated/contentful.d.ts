@@ -116,6 +116,9 @@ export interface IProjectFields {
 
   /** demo */
   demo: string;
+
+  /** order */
+  order: number;
 }
 
 export interface IProject extends Entry<IProjectFields> {
