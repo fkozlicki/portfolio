@@ -10,7 +10,7 @@ const DigitColumn = forwardRef<
 >(({ digits, withZero }, ref) => (
 	<div
 		ref={ref}
-		className="flex flex-col items-center text-[100px] leading-[100px]"
+		className="flex flex-col items-center text-[64px] leading-[64px] md:text-[100px] md:leading-[100px]"
 	>
 		{digits.map((digit, index) => (
 			<span key={index}>{digit}</span>
@@ -38,9 +38,9 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 			onComplete,
 		});
 
-		timeline.add(animateDigits(digit3Ref, 4));
-		timeline.add(animateDigits(digit2Ref, 5), '-=4');
-		timeline.add(animateDigits(digit1Ref, 2, 3), '-=5');
+		timeline.add(animateDigits(digit3Ref, 3));
+		timeline.add(animateDigits(digit2Ref, 3), '-=2.5');
+		timeline.add(animateDigits(digit1Ref, 2), '-=1');
 
 		timeline.to(ref.current, {
 			y: '-100%',
@@ -49,29 +49,24 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 		});
 	});
 
-	function animateDigits(
-		ref: RefObject<HTMLDivElement>,
-		duration: number,
-		delay = 0
-	) {
+	function animateDigits(ref: RefObject<HTMLDivElement>, duration: number) {
 		const element = ref.current!;
 
-		const totalDistance = element.scrollHeight - element.clientHeight - 25;
+		const totalDistance = element.scrollHeight - element.clientHeight;
 
 		return gsap.to(element, {
 			y: -totalDistance,
 			duration,
 			ease: 'power2.inOut',
-			delay,
 		});
 	}
 
 	return (
 		<div
 			ref={ref}
-			className="fixed inset-0 flex flex-col justify-center items-center bg-black text-white z-50"
+			className="fixed inset-0 flex flex-col justify-center items-center bg-[#060606] text-white z-50"
 		>
-			<div className="overflow-hidden flex h-[100px] font-anton">
+			<div className="overflow-hidden flex h-[64px] md:h-[100px] font-integral">
 				{digitColumns.map(({ ref, digits, withZero }, index) => (
 					<DigitColumn
 						key={index}
@@ -80,7 +75,9 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 						withZero={withZero}
 					/>
 				))}
-				<span className="relative text-[100px] leading-[100px]">%</span>
+				<span className="relative text-[64px] leading-[64px] md:text-[100px] md:leading-[100px]">
+					%
+				</span>
 			</div>
 		</div>
 	);

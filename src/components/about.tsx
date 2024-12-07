@@ -2,11 +2,8 @@
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef } from 'react';
 import { IconCloud } from './icon-cloud';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function About({
 	text = 'I am computer science student based in Lublin, Poland. I am into developing web applications. Mainly focused on React with TypeScript. Really like exploring new technologies by building interesting projects.',
@@ -56,7 +53,7 @@ export default function About({
 							<IconCloud iconSlugs={slugs} />
 						</div>
 						<div className="flex-1">
-							<p className="text-[32px] leading-[32px] md:text-[52px] md:leading-[52px] font-integral font-extrabold tracking-wide">
+							<p className="text-[32px] leading-[32px] md:text-[52px] md:leading-[52px] font-integral tracking-wide">
 								About
 							</p>
 							<p

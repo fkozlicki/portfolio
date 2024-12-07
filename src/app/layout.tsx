@@ -1,11 +1,9 @@
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ReactLenis } from 'lenis/react';
+import WebGL from '@/components/webgl';
+import Wrapper from '@/components/wrapper';
 import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import { Poppins, Anton } from 'next/font/google';
-import WebGL from '@/components/webgl';
 
 export const metadata: Metadata = {
 	title: 'Filip Kozlicki | Portfolio',
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 const font = localFont({
-	src: './fonts/Integral.otf',
+	src: './fonts/Integral.ttf',
 	display: 'swap',
 	variable: '--font-integral',
 });
@@ -44,14 +42,6 @@ const poppins = Poppins({
 	weight: '300',
 });
 
-const anton = Anton({
-	subsets: ['latin'],
-	weight: '400',
-	variable: '--font-anton',
-});
-
-gsap.registerPlugin(useGSAP);
-
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -59,9 +49,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<ReactLenis root>
+			<Wrapper>
 				<body
-					className={`antialiased relative bg-[#060606] ${font.variable} ${anton.variable} ${poppins.className}`}
+					className={`antialiased relative bg-[#060606] ${font.variable} ${poppins.className}`}
+					suppressHydrationWarning
 				>
 					<div className="fixed top-0 left-0 h-screen right-0">
 						<WebGL />
@@ -69,7 +60,7 @@ export default function RootLayout({
 
 					<div className="relative z-10">{children}</div>
 				</body>
-			</ReactLenis>
+			</Wrapper>
 		</html>
 	);
 }

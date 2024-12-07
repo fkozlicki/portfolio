@@ -62,8 +62,11 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
 export function IconCloud({ iconSlugs }: DynamicCloudProps) {
 	const [data, setData] = useState<IconData | null>(null);
+	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
+		setMounted(true);
+
 		fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
 	}, [iconSlugs]);
 
@@ -74,6 +77,10 @@ export function IconCloud({ iconSlugs }: DynamicCloudProps) {
 			renderCustomIcon(icon, 'dark')
 		);
 	}, [data]);
+
+	if (!mounted) {
+		return null;
+	}
 
 	return <Cloud {...cloudProps}>{renderedIcons ?? []}</Cloud>;
 }

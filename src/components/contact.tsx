@@ -10,7 +10,7 @@ export default function Contact() {
 				<div className="flex flex-col mt-8 gap-4 w-fit">
 					{links.map((link) => (
 						<a
-							key={link.label}
+							key={link.href}
 							href={link.href}
 							className="inline-flex items-center gap-2 md:gap-4 hover:underline md:text-xl"
 							target="__blank"

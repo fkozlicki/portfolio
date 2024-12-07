@@ -14,7 +14,6 @@ export default {
 			},
 			fontFamily: {
 				integral: 'var(--font-integral)',
-				anton: 'var(--font-anton)',
 			},
 		},
 	},
