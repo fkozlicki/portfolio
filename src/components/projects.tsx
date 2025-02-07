@@ -85,7 +85,7 @@ const projects = [
 			'Framer Motion',
 			'Turbopack',
 		],
-		demo: 'https://quizlet-clone-nextjs.vercel.app/',
+		demo: 'https://quizletclone.vercel.app/',
 		code: 'https://github.com/fkozlicki/quizlet-clone',
 	},
 	{
