@@ -69,7 +69,7 @@ export default function Project({
 
 				<p className="my-4 md:text-xl">{description}</p>
 
-				<div className="mt-auto">{tagsString}</div>
+				<div className="mt-auto text-xs md:text-base">{tagsString}</div>
 
 				<div
 					className="size-[120px] bg-[#17a123] blur-[75px] rounded-full mix-blend-soft-light will-change-transform absolute top-0 left-0 pointer-events-none z-[-1] transition-opacity duration-[1.2s] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]"
