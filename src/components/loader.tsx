@@ -38,9 +38,9 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 			onComplete,
 		});
 
-		timeline.add(animateDigits(digit3Ref, 3));
-		timeline.add(animateDigits(digit2Ref, 3), '-=2.5');
-		timeline.add(animateDigits(digit1Ref, 2), '-=1');
+		timeline.add(animateDigits(digit3Ref, 2));
+		timeline.add(animateDigits(digit2Ref, 2), '-=1.5');
+		timeline.add(animateDigits(digit1Ref, 1), '-=1');
 
 		timeline.to(ref.current, {
 			y: '-100%',
