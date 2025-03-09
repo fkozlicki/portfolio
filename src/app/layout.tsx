@@ -4,13 +4,14 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
 	title: 'Filip Kozlicki | Portfolio',
-	description: 'Filip Kozlicki | Software Engineer | Portfolio',
+	description: 'Filip Kozlicki | Web Developer | Portfolio',
 	twitter: {
 		title: 'Filip Kozlicki | Portfolio',
-		description: 'Filip Kozlicki | Software Engineer | Portfolio',
+		description: 'Filip Kozlicki | Web Developer | Portfolio',
 		images: {
 			url: 'https://filipkozlicki.pl/opengraph-image.png',
 			width: 800,
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 	},
 	openGraph: {
 		title: 'Filip Kozlicki | Portfolio',
-		description: 'Filip Kozlicki | Software Engineer | Portfolio',
+		description: 'Filip Kozlicki | Web Developer | Portfolio',
 		siteName: 'Filip Kozlicki',
 		type: 'website',
 		images: {
@@ -29,6 +30,15 @@ export const metadata: Metadata = {
 		},
 		url: 'https://filipkozlicki.pl',
 	},
+	keywords: [
+		'react.js',
+		'next.js',
+		'typescript',
+		'web',
+		'web developer',
+		'javascript',
+		'programming',
+	],
 };
 
 const font = localFont({
@@ -49,6 +59,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<Analytics />
 			<Wrapper>
 				<body
 					className={`antialiased relative bg-[#060606] ${font.variable} ${poppins.className}`}

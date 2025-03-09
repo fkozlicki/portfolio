@@ -12,7 +12,6 @@ export default function Hero() {
 	const [start, setStart] = useState(false);
 
 	useGSAP(() => {
-		// animation here
 		if (start) {
 			const timeline = gsap.timeline();
 			timeline.to(forename.current, {
@@ -51,7 +50,7 @@ export default function Hero() {
 								ref={position}
 								className="text-lg text-white/80 md:text-2xl translate-y-full"
 							>
-								Software Engineer
+								Web Developer
 							</p>
 						</div>
 					</div>
