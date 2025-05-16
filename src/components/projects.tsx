@@ -105,7 +105,7 @@ const projects = [
 			'Next-Auth',
 			'Storybook',
 		],
-		demo: 'https://redditv2.vercel.app/',
+		demo: 'https://redditv3.vercel.app/',
 		code: 'https://github.com/fkozlicki/reddit-clone',
 	},
 ];
